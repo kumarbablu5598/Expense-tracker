@@ -11,4 +11,5 @@ public interface IAuthToken extends JpaRepository<AuthenticationToken,Integer> {
     AuthenticationToken findFirstByTokenValue(String authTokenValue);
 
     AuthenticationToken findFirstByUser(User user);
+
 }

@@ -52,7 +52,7 @@ public class UserService {
 
             user.setPassword(encryptedPassword);
             iUserRepo.save(user);
-            return new SignUpOutput(signUpStatus, "Userregistered successfully!!!");
+            return new SignUpOutput(signUpStatus, "User registered successfully!!!");
         }
         catch(Exception e) {
             signUpStatusMessage = "Internal error occurred during sign up";
@@ -115,8 +115,8 @@ public class UserService {
     public String sigOutUser(String email) {
         User user = iUserRepo.findFirstByEmail(email);
        iAuthToken.delete(iAuthToken.findFirstByUser(user));
-       // authTokenRepo.delete(authTokenRepo.findFirstByPatient(patient));
         return "User Signed out successfully";
     }
+
 
 }
